@@ -3,6 +3,8 @@
 
 void showMainMenu(FILE *inventory) {
     int choice = -1;
+
+    clearScreen();
     while (choice != 0) {
         printf("Welcome to the inventory management system\n");
         printf("Please choose one of the following options: \n");
@@ -12,9 +14,12 @@ void showMainMenu(FILE *inventory) {
         printf("4. List all products\n");
         printf("5. Search for a product\n");
         printf("0. Save and Quit\n");
+        printf("Choice: ");
+
         if(scanf("%d", &choice) != 1)
             break;
         clearStdin();
+
         switch (choice) {
             case 1:
                 addProductMenu(inventory);
@@ -39,5 +44,17 @@ void showMainMenu(FILE *inventory) {
 }
 
 void addProductMenu(FILE* inventory){
-
+    clearScreen();
+}
+void modifyProductMenu(FILE *inventory) {
+    clearScreen();
+}
+void deleteProductMenu(FILE *inventory) {
+    clearScreen();
+}
+void listAllProductsMenu(FILE *inventory) {
+    clearScreen();
+}
+void searchSpecificProductMenu(FILE *inventory) { 
+    clearScreen();
 }

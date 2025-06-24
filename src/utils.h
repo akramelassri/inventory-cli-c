@@ -5,6 +5,6 @@
 
 
 void clearStdin();
-
+void clearScreen();
 
 #endif
