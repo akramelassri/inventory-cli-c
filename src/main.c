@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "ui.h"
 
 int main(void) {
 
@@ -10,7 +11,8 @@ int main(void) {
         return EXIT_FAILURE;
     }
 
-
+    showMainMenu(inventory);
+    
     fclose(inventory);
     return EXIT_SUCCESS;
 }
