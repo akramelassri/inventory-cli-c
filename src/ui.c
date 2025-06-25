@@ -72,9 +72,9 @@ void addProductMenu(FILE *inventory) {
         return;
     }
     clearStdin();
-    if(!addNewRecord(inventory, newProduct)) 
+    if (!addNewRecord(inventory, newProduct))
         printf("Product added Successfully. Press save in the menu to confirm your Action \nPress enter to return to menu...");
-    else 
+    else
         printf("Product reference already exists. Press enter to return to menu...");
     clearStdin();
 }

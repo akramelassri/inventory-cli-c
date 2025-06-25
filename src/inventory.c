@@ -15,7 +15,7 @@ int addNewRecord(FILE *inventory, Record newProduct) {
 }
 Record parseLine(char *line) {
     Record product;
-    sscanf(line,"%[^,],%[^,],%f,%d", product.reference, product.name, &product.price, &product.quantity);
+    sscanf(line, "%[^,],%[^,],%f,%d", product.reference, product.name, &product.price, &product.quantity);
     return product;
 }
 int convertRecordToline(Record product, char *buffer) {

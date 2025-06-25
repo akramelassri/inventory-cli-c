@@ -13,6 +13,6 @@ typedef struct {
 int addNewRecord(FILE *inventory, Record newProduct);
 Record parseLine(char *line);
 int convertRecordToline(Record product, char *buffer);
-int searchSpecificProductByReference(FILE *inventory,char *reference);
+int searchSpecificProductByReference(FILE *inventory, char *reference);
 
 #endif
