@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 
-
 void clearStdin();
 void clearScreen();
 
