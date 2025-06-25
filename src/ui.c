@@ -57,7 +57,6 @@ void addProductMenu(FILE *inventory) {
     newProduct.name[strcspn(newProduct.name, "\n")] = '\0';
 
     printf("Enter new product's price: ");
-    // handle input error
     if (scanf("%lf", &newProduct.price) != 1) {
         printf("Error in value given. Press enter to return to menu...");
         clearStdin();
@@ -73,8 +72,10 @@ void addProductMenu(FILE *inventory) {
         return;
     }
     clearStdin();
-    addNewRecord(inventory, newProduct);
-    printf("Product added Successfully. Press save in the menu to confirm your Action \nPress enter to return to menu...");
+    if(!addNewRecord(inventory, newProduct)) 
+        printf("Product added Successfully. Press save in the menu to confirm your Action \nPress enter to return to menu...");
+    else 
+        printf("Product reference already exists. Press enter to return to menu...");
     clearStdin();
 }
 void modifyProductMenu(FILE *inventory) {

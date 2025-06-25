@@ -1,5 +1,6 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
+
 #include <stdio.h>
 
 typedef struct {
@@ -12,5 +13,6 @@ typedef struct {
 int addNewRecord(FILE *inventory, Record newProduct);
 Record parseLine(char *line);
 int convertRecordToline(Record product, char *buffer);
+int searchSpecificProductByReference(FILE *inventory,char *reference);
 
 #endif
