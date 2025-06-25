@@ -4,7 +4,7 @@
 
 int main(void) {
 
-    FILE *inventory = fopen("../inventory.csv","a+");
+    FILE *inventory = fopen("inventory.csv","a+");
 
     if(!inventory) {
         perror("fopen");

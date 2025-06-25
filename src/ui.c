@@ -1,11 +1,13 @@
 #include "ui.h"
 #include "utils.h"
+#include "inventory.h"
+#include "string.h"
 
 void showMainMenu(FILE *inventory) {
     int choice = -1;
 
-    clearScreen();
     while (choice != 0) {
+        clearScreen();
         printf("Welcome to the inventory management system\n");
         printf("Please choose one of the following options: \n");
         printf("1. Add a product\n");
@@ -45,6 +47,26 @@ void showMainMenu(FILE *inventory) {
 
 void addProductMenu(FILE* inventory){
     clearScreen();
+    Record newProduct;
+    printf("Enter new product's reference(255 characters max): ");
+    fgets(newProduct.reference, sizeof(newProduct.reference),stdin);
+    newProduct.reference[strcspn(newProduct.reference, "\n")] = '\0';  
+    
+    printf("Enter new product's name(255 characters max): ");
+    fgets(newProduct.name, sizeof(newProduct.name),stdin);
+    newProduct.name[strcspn(newProduct.name, "\n")] = '\0';  
+
+    printf("Enter new product's price: ");
+    //handle input error
+    scanf("%lf",&newProduct.price);
+    clearStdin();
+    printf("Enter new product's quantity: ");
+    //handle input error
+    scanf("%d", &newProduct.quantity);
+    clearStdin();
+    addNewRecord(inventory,newProduct);
+    printf("Product added Successfully. Press enter to return to menu");
+    clearStdin();
 }
 void modifyProductMenu(FILE *inventory) {
     clearScreen();
